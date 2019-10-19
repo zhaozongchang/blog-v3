@@ -16,4 +16,7 @@
 //= require jquery
 //= require bootstrap/alert
 //= require bootstrap/dropdown
+//= require jquery
+//= require jquery_ujs
+//= require kindeditor
 //= require_tree .
