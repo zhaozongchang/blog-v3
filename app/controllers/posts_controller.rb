@@ -23,6 +23,26 @@ class PostsController < ApplicationController
     @posts = Post.where(:category_id => 4)
   end
 
+  def html
+    @posts = Post.where(:category_id => 5)
+  end
+
+  def skill #百宝箱
+    @posts = Post.where(:category_id => 6)
+  end
+
+  def database
+    @posts = Post.where(:category_id => 7)
+  end
+
+  def javascript
+    @posts = Post.where(:category_id => 8)
+  end
+
+  def upward #成长
+    @posts = Post.where(:category_id => 9)
+  end
+
 
 
   private

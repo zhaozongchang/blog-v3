@@ -7,8 +7,13 @@ Rails.application.routes.draw do
       get :rails
       get :linux
       get :css
+      get :html
+      get :javascript
+      get :skill
+      get :database
+      get :upward
     end
-  end 
+  end
 
   namespace :admin do
     resources :posts
