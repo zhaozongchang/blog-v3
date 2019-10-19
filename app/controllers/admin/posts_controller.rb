@@ -9,10 +9,12 @@ class Admin::PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @categories = Category.all.map { |c| [c.name, c.id] }
   end
 
   def create
     @post = Post.new(post_params)
+    @post.category_id = params[:category_id]
     @post.user = current_user
   if @post.save
     redirect_to posts_path
@@ -27,10 +29,12 @@ class Admin::PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @categories = Category.all.map { |c| [c.name, c.id] }
   end
 
   def update
     @post = Post.find(params[:id])
+    @post.category_id = params[:category_id]
     @post.update(post_params)
     redirect_to posts_path
   end
@@ -44,6 +48,6 @@ class Admin::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :category_id)
   end
 end

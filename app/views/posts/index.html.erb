@@ -1,6 +1,9 @@
-<div class="pull-right">
-  <%= link_to("Add a post", new_post_path, :class => "btn btn-default" ) %>
-</div>
+<h4>
+  <%= link_to("Ruby", ruby_posts_path(:order=> "by_developer")) %>
+  <%= link_to("Rails", rails_posts_path(:order=> "by_developer")) %>
+  <%= link_to("Linux", linux_posts_path(:order=> "by_developer")) %>
+  <%= link_to("CSS", css_posts_path(:order=> "by_developer")) %>
+</h4>
 <table class="table table-bordered">
   <% @posts.each do |post| %>
   <tr>
@@ -10,6 +13,7 @@
     <td>
       <%= post.created_at %>
     </td>
+    <td><%= post.category.name %></td>
   </tr>
   <% end %>
 </table>

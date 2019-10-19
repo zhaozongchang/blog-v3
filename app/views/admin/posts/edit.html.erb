@@ -1,8 +1,9 @@
 <h1> Edit a job </h1>
 
-<%= simple_form_for [:admin, @job ] do |f| %>
+<%= simple_form_for [:admin, @post ] do |f| %>
 
 <%= f.input :title %>
+<%= f.select :category_id, @categories , :prompt => "类别" %> <br><br>
 <%= f.kindeditor :content ,:window_onload => true  %>
 
   <%= f.submit "Submit" %>

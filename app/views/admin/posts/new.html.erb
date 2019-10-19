@@ -1,8 +1,9 @@
-<h1> Add a job </h1>
+<h1> 添加文章 </h1>
 
 <%= simple_form_for [:admin,@post] do |f| %>
 
-<%= f.input :title %>
+<%= f.input :title, label: "标题"%>
+<%= select_tag(:category_id, options_for_select(@categories), :prompt => "文章类别", :required => true)%> <br><br>
 <%= f.kindeditor :content ,:window_onload => true  %>
 
   <%= f.submit "Submit" %>

@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'posts#index'
-  resources :posts
+  resources :posts do
+    collection do
+      get :ruby
+      get :rails
+      get :linux
+      get :css
+    end
+  end 
 
   namespace :admin do
     resources :posts
