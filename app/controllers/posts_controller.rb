@@ -66,6 +66,18 @@ class PostsController < ApplicationController
     redirect_back fallback_location: root_path
   end
 
+  def upvote
+    @post = Post.find(params[:id])
+    @post.upvote_by current_user
+    redirect_back fallback_location: root_path
+  end
+
+  def downvote
+    @post = Post.find(params[:id])
+    @post.downvote_by current_user
+    redirect_back fallback_location: root_path
+  end
+
   protected
 
   def validate_search_key

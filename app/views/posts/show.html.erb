@@ -38,3 +38,13 @@
     </div>
   </div>
 </div>
+<%= link_to like_post_path(@post), method: :put do %>
+    <div class="pi-thumbs-up">
+        赞（<%= @post.get_upvotes.size %>）
+    </div>
+<% end %>
+<%= link_to dislike_post_path(@post), method: :put do %>
+<div class="pi-thumbs-down">
+    踩（<%= @post.get_downvotes.size%>）
+</div>
+<% end %>
