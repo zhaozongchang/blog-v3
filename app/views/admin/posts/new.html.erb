@@ -7,6 +7,5 @@
 <%= f.input :summary, label: "文章摘要", required: true%>
 <%= select_tag(:category_id, options_for_select(@categories), :prompt => "文章类别", :required => true)%> <br><br>
 <%= f.kindeditor :content ,:window_onload => true, required: true  %>
-
-  <%= f.submit "Submit" %>
+<%= f.submit "Submit" %>
 <% end %>
