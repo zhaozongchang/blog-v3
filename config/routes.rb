@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'posts#index'
   resources :favorites
   resources :posts do
+    resources :comments
     collection do
       get :search
       get :ruby

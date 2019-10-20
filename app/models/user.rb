@@ -17,4 +17,6 @@ class User < ApplicationRecord
      favorite_posts.include?(group)
    end
 
+   has_many :comments
+
 end

@@ -6,4 +6,5 @@ class Post < ApplicationRecord
 
   has_many :favorites
   has_many :fans, :through => :favorites, :source => :user
+  has_many :comments
 end
