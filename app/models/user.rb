@@ -9,4 +9,12 @@ class User < ApplicationRecord
   def admin?
    is_admin
  end
+
+   has_many :favorites
+   has_many :favorite_posts, :through => :favorites, :source => :post
+
+   def is_fan_of?(group)
+     favorite_posts.include?(group)
+   end
+
 end

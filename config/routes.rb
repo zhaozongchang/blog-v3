@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'posts#index'
+  resources :favorites
   resources :posts do
     collection do
       get :search
@@ -14,6 +15,10 @@ Rails.application.routes.draw do
       get :database
       get :upward
     end
+    member do
+     post :favorite
+     post :unfavorite
+   end
   end
 
   namespace :admin do

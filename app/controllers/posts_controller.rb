@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:favorite, :unfavorite]
   before_action :validate_search_key, only: [:search]
 
   def index
@@ -49,6 +50,20 @@ class PostsController < ApplicationController
 
   def upward #成长
     @posts = Post.where(:category_id => 9)
+  end
+
+  def favorite
+    @post = Post.find(params[:id])
+    current_user.favorite_posts << @post
+    flash[:notice] = "已收藏文章"
+    redirect_back fallback_location: root_path
+  end
+
+  def unfavorite
+    @post = Post.find(params[:id])
+    current_user.favorite_posts.delete(@post)
+    flash[:notice] = "已取消收藏"
+    redirect_back fallback_location: root_path
   end
 
   protected
