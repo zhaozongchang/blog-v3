@@ -2,11 +2,11 @@
 
 <%= simple_form_for [:admin,@post] do |f| %>
 
-<%= f.input :title, label: "标题"%>
-<%= f.input :author, label: "作者"%>
-<%= f.input :summary, label: "文章摘要"%>
+<%= f.input :title, label: "标题", required: true%>
+<%= f.input :author, label: "作者", required: true%>
+<%= f.input :summary, label: "文章摘要", required: true%>
 <%= select_tag(:category_id, options_for_select(@categories), :prompt => "文章类别", :required => true)%> <br><br>
-<%= f.kindeditor :content ,:window_onload => true  %>
+<%= f.kindeditor :content ,:window_onload => true, required: true  %>
 
   <%= f.submit "Submit" %>
 <% end %>
