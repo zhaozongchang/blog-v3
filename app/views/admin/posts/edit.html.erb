@@ -3,6 +3,8 @@
 <%= simple_form_for [:admin, @post ] do |f| %>
 
 <%= f.input :title %>
+<%= f.input :author, label: "作者"%>
+<%= f.input :summary, label: "文章摘要"%>
 <%= f.select :category_id, @categories , :prompt => "类别" %> <br><br>
 <%= f.kindeditor :content ,:window_onload => true  %>
 

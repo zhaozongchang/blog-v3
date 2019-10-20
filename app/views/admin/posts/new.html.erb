@@ -3,6 +3,8 @@
 <%= simple_form_for [:admin,@post] do |f| %>
 
 <%= f.input :title, label: "标题"%>
+<%= f.input :author, label: "作者"%>
+<%= f.input :summary, label: "文章摘要"%>
 <%= select_tag(:category_id, options_for_select(@categories), :prompt => "文章类别", :required => true)%> <br><br>
 <%= f.kindeditor :content ,:window_onload => true  %>
 
