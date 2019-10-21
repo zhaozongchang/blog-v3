@@ -1,3 +1,42 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.post-box1{
+  margin: 0 auto;
+}
+
+.post-main-box{
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-top: 1px solid #e0e0e0;
+  box-shadow:0px 0px 4px 0 rgba(0,0,0,0.15);
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.post-main-box .post-title a{
+  text-decoration: none;
+  color: #333;
+}
+.post-main-box .post-title a:hover{
+  color: #337ab7;
+}
+
+.post-main-box .post-zhaoyao{
+  color: #666;
+  font-size: 14px;
+  line-height: 25px;
+}
+.post-main-box .post-info{
+  color: #888;
+  font-size: 15px;
+  margin-top: 15px;
+}
+.post-main-box .post-info span{
+  padding-right: 8px;
+}
+
+.post-main-box .post-lei a{
+  text-decoration: none;
+  color: #096;
+}

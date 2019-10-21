@@ -1,22 +1,20 @@
-<h4>
-  <%= link_to("Ruby", ruby_posts_path(:order=> "by_developer")) %>
-  <%= link_to("Rails", rails_posts_path(:order=> "by_developer")) %>
-  <%= link_to("Linux", linux_posts_path(:order=> "by_developer")) %>
-  <%= link_to("CSS", css_posts_path(:order=> "by_developer")) %>
-</h4>
-<table class="table table-bordered">
-  <% @posts.each do |post| %>
-  <tr>
-    <td>
-      <%= link_to(post.title, post_path(post)) %>
-    </td>
-    <td>
-      <%= post.created_at %>
-    </td>
-    <td><%= post.category.name %></td>
-  </tr>
-  <% end %>
-</table>
+
+<div class="post-box1">
+    <% @posts.each do |post| %>
+    <div class="post-main-box">
+      <h4 class="post-title"><%= link_to(post.title, post_path(post)) %></h4>
+      <p class="post-zhaoyao"><%= post.summary %></p>
+      <p class="post-info">
+        <span><i class="fa fa-user"></i> <%= post.author %></span>
+        <span><i class="fa fa-clock-o"></i> <%= post.created_at.to_s(:ymd) %></span>
+        <span class="post-lei">【 <%= link_to(post.category.name, upward_posts_path(:order=> "by_developer")) %> 】</span>
+
+      </p>
+    </div>
+<% end %>
+</div>
+
+
 
 <a href="#myPage" >
   <span id="gotop">回到<br/>顶部></span>

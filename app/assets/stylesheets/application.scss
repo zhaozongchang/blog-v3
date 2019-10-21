@@ -18,6 +18,35 @@
  @import "font-awesome";
  @import "social-share-button";
 
+
+ /***********通用样式开始***********/
+ html{
+   position: relative;
+   min-height: 100%;
+   display: block;
+ }
+ body {
+   font: 15px "Microsoft YaHei", Arial, Helvetica, sans-serif;
+   background: #E9EAED;
+   line-height: 1.5;
+   overflow-x: hidden;
+   margin-top: 70px;
+   z-index: 999;
+ }
+
+  ul, ol, dl{
+     list-style: none;
+   }
+
+   *{
+     margin: 0;
+     padding: 0;
+   }
+
+
+ /***************通用样式结束*****************/
+
+
  /****** 分享按钮样式 ******/
   $size: 24px;
 
@@ -31,11 +60,7 @@
   /****** 完成分享按钮样式 ******/
 
 
-  .navbar-left {
-     float: initial;
-      margin-top: 10px;
-     width: 300px;
-  }
+// ********* 搜索开始 *************
 
   .search-id {
      width: 200px;
@@ -49,6 +74,46 @@
   .input-group {
      left: 13px;//搜索栏距离左边距离
   }
+
+  // ********* 搜索结束 *************
+
+  // ********* navbar开始 *************
+  .header-up{
+    width: 100%;
+    height: 5px;
+    background: #000 linear-gradient(to left, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+  }
+  .navbar-default{
+    background: #FFFFFF;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,.15);
+    position: fixed;
+    margin-top: -70px;
+    z-index: 9991;
+  }
+
+  .navbar-header .navbar-brand{
+  // color: #FFFFFF;
+  font-weight: 600;
+  font-size: bolder;
+  font-size: 21px;
+  padding-left: 120px;
+
+  }
+
+  .header-font li{
+
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  .collapse{
+    padding-right: 10%;
+  }
+
+  // ********* navbar结束 *************
 
   //回到顶部
 #gotop {
