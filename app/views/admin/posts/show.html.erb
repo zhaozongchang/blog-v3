@@ -1,6 +1,63 @@
-<h1> <%= @post.title %> </h1>
+<div class="col-md-8 col-md-offset-2">
+    <%= link_to("返回管理页面", admin_posts_path)%>
+  <div class="post-show">
+    <h4 class=""><%= @post.category.name %></h4>
+    <h2> <%= @post.title %> </h2>
+    <div class="post-show-info">
+      <span><i class="fa fa-user"></i> <%= @post.author %></span>
+      <span><i class="fa fa-clock-o"></i> <%= @post.created_at.to_s(:ymd) %></span>
+      <span class="post-lei">【 <%= @post.category.name %> 】</span>
+      <span>
+        <%= @post.impressionist_count(:filter=>:session_hash) %> 人已围观
+      </span>
+      <span>
+      </span>
+    </div>
+    <div class="fenxiang"><%= social_share_button_tag(@post.title) %><!-- 社交分享 --></div>
+    <p class="post-show-zhaiyao"><span>简介：</span><%= @post.summary %></p>
+    <p>
+      <%= raw @post.content %>
+    </p>
 
-<p>
-  <%= raw @post.content %>
 
-</p>
+
+    <div class="post-zan clearfix">
+      <div class="pull-left">
+       <% if current_user %>
+        <% if !current_user.is_fan_of?(@post) %>
+          <%= link_to favorite_post_path(@post), :class => "like btn btn-default", method: :post do %>
+            <i class="fa fa-heart fa-lg"></i>
+          <% end %>
+        <% else %>
+          <%= link_to unfavorite_post_path(@post), :class => "unlike btn btn-default", method: :post do %>
+            <i class="fa fa-heart fa-lg"></i>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= link_to favorite_post_path(@post), :class => "like btn btn-default",method: :post do %>
+          <i class="fa fa-heart fa-lg"></i>
+        <% end %>
+      <% end %>
+      <span> 收藏人气（<%= @post.fans.count %>）</span>
+    </div>
+
+
+      <div class="pull-right">
+        <span class="pull-left">
+          <%= link_to like_post_path(@post), method: :put do %>
+              <div class="pi-thumbs-up">
+                  <i class="fa fa-thumbs-up"></i>（<%= @post.get_upvotes.size %>）
+              </div>
+          <% end %>
+        </span>
+        <span class="pull-right">
+          <%= link_to dislike_post_path(@post), method: :put do %>
+          <div class="pi-thumbs-down">
+              <i class="fa fa-thumbs-down"></i>（<%= @post.get_downvotes.size%>）
+          </div>
+          <% end %>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
