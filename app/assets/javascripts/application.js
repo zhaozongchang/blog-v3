@@ -22,6 +22,7 @@
 //= require social-share-button
 //= require social-share-button/wechat
 //= require bootstrap/collapse
+//= require bootstrap/modal
 //= require_tree .
 
 //顶部回到
