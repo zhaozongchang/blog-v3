@@ -1,57 +1,76 @@
+<div class="post-show">
+  <h4 class=""><%= @post.category.name %></h4>
+  <h2> <%= @post.title %> </h2>
+  <div class="post-show-info">
+    <span><i class="fa fa-user"></i> <%= @post.author %></span>
+    <span><i class="fa fa-clock-o"></i> <%= @post.created_at.to_s(:ymd) %></span>
+    <span class="post-lei">【 <%= @post.category.name %> 】</span>
+    <span>
+      <%= @post.impressionist_count(:filter=>:session_hash) %> 人已围观
+    </span>
+    <span>
+    </span>
+  </div>
+  <div class="fenxiang"><%= social_share_button_tag(@post.title) %><!-- 社交分享 --></div>
+  <p class="post-show-zhaiyao"><span>简介：</span><%= @post.summary %></p>
+  <p>
+    <%= raw @post.content %>
+  </p>
 
-<div class="col-md-2"  >
-  <span>
-   <% if current_user %>
-    <% if !current_user.is_fan_of?(@post) %>
-      <%= link_to favorite_post_path(@post), :class => "like btn btn-default", method: :post do %>
-        <i class="fa fa-heart fa-lg"></i>
+
+
+  <div class="post-zan clearfix">
+    <div class="pull-left">
+     <% if current_user %>
+      <% if !current_user.is_fan_of?(@post) %>
+        <%= link_to favorite_post_path(@post), :class => "like btn btn-default", method: :post do %>
+          <i class="fa fa-heart fa-lg"></i>
+        <% end %>
+      <% else %>
+        <%= link_to unfavorite_post_path(@post), :class => "unlike btn btn-default", method: :post do %>
+          <i class="fa fa-heart fa-lg"></i>
+        <% end %>
       <% end %>
     <% else %>
-      <%= link_to unfavorite_post_path(@post), :class => "unlike btn btn-default", method: :post do %>
+      <%= link_to favorite_post_path(@post), :class => "like btn btn-default",method: :post do %>
         <i class="fa fa-heart fa-lg"></i>
       <% end %>
     <% end %>
-  <% else %>
-    <%= link_to favorite_post_path(@post), :class => "like btn btn-default",method: :post do %>
-      <i class="fa fa-heart fa-lg"></i>
-    <% end %>
-  <% end %>
-  <span> 收藏人气（<%= @post.fans.count %>）</span>
-</span>
-      </div>
-<h1> <%= @post.title %> </h1>
+    <span> 收藏人气（<%= @post.fans.count %>）</span>
+  </div>
 
-<p>
-  <%= raw @post.content %>
-</p>
 
-<div class="row comment">
-  <div class="col-sm-10 col-sm-offset-1">
-    <h3 class="comments_title">
-      <%= @post.comments.count %> 条评论
-    </h3>
-    <hr>
-    <div id="reivews">
-      <%= render @post.comments %>
-      <hr>
-      <%= render "comments/form" %>
+    <div class="pull-right">
+      <span class="pull-left">
+        <%= link_to like_post_path(@post), method: :put do %>
+            <div class="pi-thumbs-up">
+                <i class="fa fa-thumbs-up"></i>（<%= @post.get_upvotes.size %>）
+            </div>
+        <% end %>
+      </span>
+      <span class="pull-right">
+        <%= link_to dislike_post_path(@post), method: :put do %>
+        <div class="pi-thumbs-down">
+            <i class="fa fa-thumbs-down"></i>（<%= @post.get_downvotes.size%>）
+        </div>
+        <% end %>
+      </span>
     </div>
   </div>
 </div>
-<%= link_to like_post_path(@post), method: :put do %>
-    <div class="pi-thumbs-up">
-        赞（<%= @post.get_upvotes.size %>）
+  <div class="show-comment">
+    <div class="comment-title">
+      <h4>文章评论 <small><%= @post.comments.count %> 条评论</small></h4>
     </div>
-<% end %>
-<%= link_to dislike_post_path(@post), method: :put do %>
-<div class="pi-thumbs-down">
-    踩（<%= @post.get_downvotes.size%>）
-</div>
-<% end %>
+
+    <div id="reivews">
+      <%= render @post.comments %>
+      <%= render "comments/form" %>
+    </div>
+  </div>
 
 
-<%= social_share_button_tag(@post.title) %><!-- 社交分享 -->
 
 <a href="#myPage" >
-       <span id="gotop">回到<br/>顶部></span>
+  <span id="gotop">回到<br/>顶部></span>
  </a>

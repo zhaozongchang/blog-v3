@@ -44,6 +44,7 @@ gem 'ransack'
 gem 'font-awesome-rails'
 gem 'acts_as_votable'
 gem 'social-share-button'
+gem 'impressionist'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

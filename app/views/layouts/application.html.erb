@@ -21,31 +21,61 @@
             <%= yield %>
           </div>
           <div class="col-md-3">
-            <form class="navbar-form navbar-left">
-              <div class="form-group">
-                <%= render :partial => "posts/search_bar"%>
+            <div class="post-right-1">
+              <div class="post-right-3">
+                <h4 class="post-right-title">搜索</h4>
+                <div class="form-group">
+                  <%= form_tag search_posts_path, :class => "posts-search-form", :method => :get do %>
+                    <div class="input-group" id="search-id" >
+                      <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="本站搜索...">
+                      <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                          <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="form-group">
+                  <form class="" action="https://www.baidu.com/" >
+                    <div class="input-group" id="search-id" >
+                      <input type="text" class="form-control" placeholder="百度搜索...">
+                      <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                          <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="form-group">
+                  <form class="" action="https://www.google.com/" >
+                    <div class="input-group" id="search-id" >
+                      <input type="text" class="form-control" placeholder="Google搜索...">
+                      <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                          <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
-            </form>
-            <form class="navbar-form navbar-left">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+              <div class="post-right-2">
+                <h4 class="post-right-title">文章分类</h4>
+                <span><%= link_to("Ruby", ruby_posts_path(:order=> "by_developer")) %></span>
+                <span><%= link_to("Rails", rails_posts_path(:order=> "by_developer")) %></span>
+                <span><%= link_to("Linux", linux_posts_path(:order=> "by_developer")) %></span>
+                <span><%= link_to("CSS", css_posts_path(:order=> "by_developer")) %></span>
+                <span><%= link_to("HTML", html_posts_path(:order=> "by_developer")) %></span>
+                <span><%= link_to("百宝箱", skill_posts_path(:order=> "by_developer")) %></span>
+                <span><%= link_to("数据库", database_posts_path(:order=> "by_developer")) %></span>
+                <span><%= link_to("JavaScript", javascript_posts_path(:order=> "by_developer")) %></span>
+                <span><%= link_to("个人成长", upward_posts_path(:order=> "by_developer")) %></span>
               </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-            <h4>
-              <%= link_to("Ruby", ruby_posts_path(:order=> "by_developer")) %>
-              <%= link_to("Rails", rails_posts_path(:order=> "by_developer")) %>
-              <%= link_to("Linux", linux_posts_path(:order=> "by_developer")) %>
-              <%= link_to("CSS", css_posts_path(:order=> "by_developer")) %>
-              <%= link_to("HTML", html_posts_path(:order=> "by_developer")) %>
-              <%= link_to("百宝箱", skill_posts_path(:order=> "by_developer")) %>
-              <%= link_to("数据库", database_posts_path(:order=> "by_developer")) %>
-              <%= link_to("JS", javascript_posts_path(:order=> "by_developer")) %>
-              <%= link_to("个人成长", upward_posts_path(:order=> "by_developer")) %>
-            </h4>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </body>

@@ -1,9 +1,8 @@
 <%= simple_form_for([@post, @post.comments.build]) do |f|%>
-
   <div class="field">
+    <span>
       <%= f.text_area :body, class: "form-control" %>
+      <%= f.submit "评论一下", class: "btn btn-primary" %>
+    </span>
   </div>
-
-
-  <%= f.submit "评论一下", class: "btn btn-primary" %>
 <% end %>

@@ -1,13 +1,14 @@
 <div class="comments_wrapper clearfix">
     <div class="pull-left">
-        <p class="lead"><%= comment.body %></p>
-        <p class="comment-content-1">评论者：<%= comment.user.email %></p>
-      <p class="comment-content-1">时间：<%= comment.created_at.to_s(:ymd) %></p>
+      <p class="comment-content-1"><%= comment.user.email %></p>
+      <p class="lead"><%= comment.body %></p>
     </div>
 
-    <div>
-<% if comment.user == current_user %>
-   <%= link_to("Delete", post_comment_path(@post, comment), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm pull-right") %>
-<% end %>
+    <div class="pull-right">
+      <p class="comment-content-1"><%= comment.created_at.to_s(:ymd) %>
+      <% if comment.user == current_user %>
+         <%= link_to("Delete", post_comment_path(@post, comment), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-info btn-xs") %>
+      <% end %>
+      </p>
   </div>
 </div>

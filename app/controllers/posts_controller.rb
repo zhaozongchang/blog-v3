@@ -1,13 +1,15 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:favorite, :unfavorite]
   before_action :validate_search_key, only: [:search]
+  impressionist :actions=>[:show]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
   end
 
   def show
     @post = Post.find(params[:id])
+    impressionist(@post)
   end
 
   def search

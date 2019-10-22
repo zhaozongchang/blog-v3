@@ -8,4 +8,5 @@ class Post < ApplicationRecord
   has_many :fans, :through => :favorites, :source => :user
   has_many :comments
   acts_as_votable
+  is_impressionable
 end

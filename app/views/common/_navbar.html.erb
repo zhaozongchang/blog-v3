@@ -43,9 +43,9 @@
           </ul>
         </li>
       </ul>
-      
+
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/">关于我</a></li>
+        <li><%= link_to("关于我", wode_posts_path)%></li>
           <% if !current_user %>
               <li><%= link_to("注册", new_user_registration_path) %> </li>
               <li><%= link_to("登入", new_user_session_path) %></li>

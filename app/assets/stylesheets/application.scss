@@ -60,22 +60,6 @@
   /****** 完成分享按钮样式 ******/
 
 
-// ********* 搜索开始 *************
-
-  .search-id {
-     width: 200px;
-     padding-top: 7px;
-  }
-
-  .page-wrap {
-     margin-top: 50px;//搜索页面距离顶部的距离
-  }
-
-  .input-group {
-     left: 13px;//搜索栏距离左边距离
-  }
-
-  // ********* 搜索结束 *************
 
   // ********* navbar开始 *************
   .header-up{
@@ -99,18 +83,11 @@
   font-weight: 600;
   font-size: bolder;
   font-size: 21px;
-  padding-left: 120px;
+  padding-left: 150px;
 
   }
-
-  .header-font li{
-
-    color: #FFFFFF;
-    text-decoration: none;
-  }
-
   .collapse{
-    padding-right: 10%;
+    padding-right: 14%;
   }
 
   // ********* navbar结束 *************
@@ -128,4 +105,44 @@
   padding: 5px 9px;
   cursor: pointer;
   display: none; /*默认先隐藏掉*/
+}
+
+.post-right-1{
+  margin-top: 12px;
+}
+.post-right-2{
+  background-color: #FFFFFF;
+  padding: 8px 20px;
+  border-radius: 5px;
+}
+.post-right-title{
+  line-height: 30px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #484848;
+  font-weight: normal;
+}
+
+.post-right-2 span{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  padding: 4px 14px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.post-right-2 a{
+  text-decoration: none;
+  color: #5bc0de;
+  font-size: 15px;
+}
+
+.post-right-3{
+  margin-bottom: 20px;
+  background-color: #FFFFFF;
+  padding: 8px 20px;
+  border-radius: 5px;
+}
+.post-right-3 .form-group{
+  
 }

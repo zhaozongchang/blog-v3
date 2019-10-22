@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get :skill
       get :database
       get :upward
+      get :wode
     end
     member do
      post :favorite

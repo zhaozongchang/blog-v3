@@ -5,14 +5,25 @@
   margin: 0 auto;
 }
 
+.post-box2{
+  background-color: #F7F7F7;
+  height: 50px;
+  line-height: 30px;
+  border-radius: 5px 5px 0 0;
+}
+.post-box2 h4{
+  line-height: 50px;
+  padding-left: 20px;
+  color: #484848;
+}
 .post-main-box{
   width: 100%;
   background-color: #FFFFFF;
   padding: 20px;
   border-top: 1px solid #e0e0e0;
-  box-shadow:0px 0px 4px 0 rgba(0,0,0,0.15);
-  border-radius: 5px;
-  margin-top: 5px;
+  box-shadow:0px 0px 2px 0 rgba(0,0,0,0.15);
+  border-radius: 2px;
+  // margin-top: 5px;
 }
 .post-main-box .post-title a{
   text-decoration: none;
@@ -33,10 +44,106 @@
   margin-top: 15px;
 }
 .post-main-box .post-info span{
-  padding-right: 8px;
+  padding-right: 10px;
 }
 
-.post-main-box .post-lei a{
-  text-decoration: none;
-  color: #096;
+.post-main-box .post-lei{
+  color: #5bc0de;
+  font-size: 10px;
+}
+
+// ************* post-show 开始*********
+.post-show{
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+
+}
+.post-show h4{
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  color: #484848;
+}
+
+.post-show-info{
+  color: #888;
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+.post-show-info span{
+  padding-right: 10px;
+}
+
+ .fenxiang{
+  margin-top: 10px;
+}
+
+.post-show-zhaiyao{
+  background-color: #888888;
+  border-left: 4px solid #5bc0de;
+  background: none repeat 0 0 #F6F6F6;
+  padding: 10px;
+  border-radius: 3px;
+  margin: 15px 0;
+}
+.post-show-zhaiyao span{
+  font-weight:bold;
+  font-size:18px;
+}
+
+.post-zan{
+  margin-top: 50px;
+}
+
+.show-comment{
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 5px 20px;
+  border-radius: 5px;
+  box-shadow:0px 0px 4px 0 rgba(0,0,0,0.15);
+}
+
+.comment-title h4{
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  color: #484848;
+}
+
+// 评论
+.comments_wrapper{
+  border-bottom: 1px solid #e0e0e0;
+  margin-top: 10px;
+}
+.comment-content-1{
+  color: #999999;
+  font-size: 14px;
+}
+.field{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+// ************* post-show 结束*********
+
+
+
+// *************wode-page开始*********
+
+.wode-page{
+  background-color: #ffffff;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.wode-page p{
+  color: #666;
+}
+.jianjie{
+  background-color: #888888;
+  background: none repeat 0 0 #F6F6F6;
+  padding: 5px;
 }
