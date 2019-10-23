@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:favorite, :unfavorite]
+  before_action :authenticate_user!, only: [:favorite, :unfavorite, :upvote, :downvote]
   before_action :validate_search_key, only: [:search]
   impressionist :actions=>[:show]
 
