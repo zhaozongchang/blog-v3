@@ -8,8 +8,6 @@
     <span>
       <%= @post.impressionist_count(:filter=>:session_hash) %> 人已围观
     </span>
-    <span>
-    </span>
   </div>
   <div class="fenxiang"><%= social_share_button_tag(@post.title) %><!-- 社交分享 --></div>
   <p class="post-show-zhaiyao"><span>简介：</span><%= @post.summary %></p>
@@ -71,6 +69,6 @@
 
 
 
-<a href="#myPage" >
-  <span id="gotop">回到<br/>顶部></span>
+<a href="#myPage">
+  <span id="gotop">回到<br/>顶部</span>
  </a>

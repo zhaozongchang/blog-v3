@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link  href="tou.ico" rel="shortcut icon">
   </head>
 
   <body>
@@ -19,6 +20,7 @@
         <div class="col-md-10 col-md-offset-1">
           <div class="col-md-9">
             <%= yield %>
+
           </div>
           <div class="col-md-3">
             <div class="post-right-1">
@@ -75,7 +77,9 @@
               </div>
             </div>
           </div>
+
         </div>
+          <%= render "common/footer" %>
       </div>
     </div>
   </body>
