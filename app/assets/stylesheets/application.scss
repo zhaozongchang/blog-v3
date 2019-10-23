@@ -49,18 +49,6 @@
  /***************通用样式结束*****************/
 
 
- /****** 分享按钮样式 ******/
-  $size: 24px;
-
-  .social-share-button {
-    .ssb-icon {
-      background-size: $size $size;
-      height: $size;
-      width: $size;
-    }
-  }
-  /****** 完成分享按钮样式 ******/
-
 
 
   // ********* navbar开始 *************
@@ -86,7 +74,9 @@
   font-size: bolder;
   font-size: 21px;
   padding-left: 135px;
-
+  color: #00C1DE;
+  font-weight: 400;
+  // font-family: "宋体";
   }
   .collapse{
     padding-right: 14%;
@@ -254,6 +244,18 @@
 
 
 /**********底部**********/
+
+/****** 分享按钮样式 ******/
+ $size: 30px;
+
+ .social-share-button {
+   .ssb-icon {
+     background-size: $size $size;
+     height: $size;
+     width: $size;
+   }
+ }
+ /****** 完成分享按钮样式 ******/
    .footer1{
      position:absolute;
      bottom:0px;
@@ -264,9 +266,7 @@
    }
 
    .footer1 .container{
-     margin-top:10px;
-     // line-height: 70px;
-     color: #fff;
+     margin-top:5px;
      width: 100%;
    }
 
@@ -278,14 +278,10 @@
 
    .soc-media-ul a{
      display: inline-block;
-     padding: 10px;
-     color: #fff;
-     border: 2px solid #5bc0de;;
+     padding: 15px;
+     border: 1px solid #5bc0de;
      border-radius: 50%;
    }
 
-   .soc-media-ul li a:hover{
-     color: #93F9B9;
-   }
 
 /**********底部**********/
